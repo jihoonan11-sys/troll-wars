@@ -1,0 +1,18 @@
+{
+  "name": "troll-wars",
+  "version": "0.5.6",
+  "private": true,
+  "description": "Troll Wars: Continent of Ruins - multiplayer browser prototype",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "phaser": "^3.90.0",
+    "socket.io": "^4.8.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
