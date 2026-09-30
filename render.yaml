@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: troll-wars
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: CLIENT_ORIGIN
+        value: https://jihoonan11-sys.github.io

@@ -1,0 +1,7 @@
+# Troll Wars server URL
+
+Edit the value in `index.html`:
+
+window.TROLL_WARS_SERVER_URL = "https://YOUR-SERVER-URL";
+
+For GitHub Pages, this must be the public URL of the Node.js/Socket.io server.

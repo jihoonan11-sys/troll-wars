@@ -1,18 +1,58 @@
-# Troll Wars V0.5.6 — Guest Server UI Fix
+# Troll Wars: Continent of Ruins — V0.6.0
 
-Guest Server now works with both direct index.html mode and server mode.
+## New architecture
 
-- Direct index.html: Solo Play works locally.
-- Create Server from direct mode automatically opens `http://localhost:3000/?guest=create`.
-- Join Server from direct mode automatically opens `http://localhost:3000/?guest=join&id=XXXXXX`.
-- Server mode creates/joins temporary Guest Servers by 6-character ID.
+- GitHub = source code
+- GitHub Pages = game client
+- Node.js + Socket.io = multiplayer server
+- Database/Storage = next development stage
 
-For shared Guest Servers, run `npm install` then `npm start` and open `http://localhost:3000`.
+## GitHub Pages
 
+The repository root contains `index.html`, so GitHub Pages can publish the game directly.
 
-## V0.5.6 Combat Update
-- Directional melee attacks with a 110° hit arc.
-- Server-authoritative facing and hit detection.
-- Attack cone visual feedback.
-- Player facing indicator.
-- Existing Guest Server, bombs, destruction, EXP, deaths and graves preserved.
+Expected URL:
+
+`https://jihoonan11-sys.github.io/troll-wars/`
+
+GitHub Pages only serves the client. It does not run `server.js`.
+
+## Multiplayer server
+
+Deploy this repository to a Node.js host that supports WebSockets.
+
+After deployment, edit the following line in `index.html`:
+
+`window.TROLL_WARS_SERVER_URL = "https://YOUR-SERVER-URL";`
+
+Then push the change to GitHub.
+
+The server has a health endpoint:
+
+`/health`
+
+Guest Server IDs are currently in-memory. Persistent server storage will be added in the next development stage.
+
+## Local test
+
+1. Install Node.js.
+2. Run `npm install`.
+3. Run `npm start`.
+4. Open `http://localhost:3000`.
+5. Create a Guest Server and use its 6-character ID on another browser/device connected to the same public server.
+
+## Current controls
+
+- WASD = Move
+- SPACE = Attack
+- B = Bomb
+
+## Development direction
+
+1. GitHub Pages + server connection
+2. Guest Server ID
+3. Persistent server storage
+4. Account data
+5. Admin Panel
+6. Staff content tools
+7. Custom Server
